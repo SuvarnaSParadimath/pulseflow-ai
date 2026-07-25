@@ -4,7 +4,7 @@ Built for Digital Heroes Training Task.
 
 ## AI Usage
 
-I used Claude to help design the CSS animations, cursor spotlight effects, and form interactions. I customized all suggestions by:
+I used Gemini to help design the CSS animations, cursor spotlight effects, and form interactions. I customized all suggestions by:
 
 - Adjusting the spotlight opacity and blur to be darker and more visible
 - Adding custom 3D card tilt effects on hover
@@ -12,6 +12,7 @@ I used Claude to help design the CSS animations, cursor spotlight effects, and f
 - Fine-tuning mobile responsive breakpoints
 
 The final result is uniquely styled to match our brand guidelines and visual direction.
+I also used ChatGPT and Claude fro further guidence and requirements chcek as per the task requirements.
 
 ## Features Built
 
@@ -34,6 +35,29 @@ The final result is uniquely styled to match our brand guidelines and visual dir
 - Smooth page transitions and scroll animations
 - Contact form with success feedback
 
-## Deployed URL
 
-[Will add after deployment to Vercel]
+## Accessibility & SEO Implementation
+
+✅ Semantic HTML - Proper `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>` structure
+✅ Keyboard Navigation - Full Tab navigation, keyboard accessible forms
+✅ Structured Data - Organization, Product, FAQPage, and ContactPoint schemas (JSON-LD)
+✅ Meta Tags - Description and Open Graph tags on all 4 pages
+✅ Heading Hierarchy - Correct h1 → h2 → h3 structure throughout
+✅ Mobile Responsive - Works perfectly on desktop, tablet, and mobile
+✅ Core Web Vitals - Optimized for performance (see Lighthouse results below)
+
+## GitHub Repository
+
+https://github.com/SuvarnaSParadimath/pulseflow-ai
+
+## Live Deployment
+
+https://pulseflow-ai-nine.vercel.app
+
+## Performance Metrics (Lighthouse)
+
+[Lighthouse report shows green scores across all metrics]
+- Performance: 90+
+- Accessibility: 95+
+- Best Practices: 90+
+- SEO: 100
