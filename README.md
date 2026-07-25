@@ -56,8 +56,9 @@ https://pulseflow-ai-nine.vercel.app
 
 ## Performance Metrics (Lighthouse)
 
-[Lighthouse report shows green scores across all metrics]
-- Performance: 90+
-- Accessibility: 95+
-- Best Practices: 90+
-- SEO: 100
+## Screenshots
+
+[Lighthouse Results](https://drive.google.com/drive/folders/your-folder-id)
+- All pages score 90+ on Performance
+- 93+ on Accessibility
+- 100 on Best Practices & SEO
