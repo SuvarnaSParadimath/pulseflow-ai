@@ -1,0 +1,678 @@
+/* ============================================================
+   1. CORE RICH GOLD & ATMOSPHERIC THEME
+   ============================================================ */
+:root {
+  --bg-primary: #505252;
+  --text-primary: #ffffff;
+  --text-muted: #a0aab0;
+  --accent-gold: #e7c77e;
+  --accent-gold-glow: rgba(231, 199, 126, 0.25);
+  --border-gold: rgba(231, 199, 126, 0.25);
+  --font-main:
+    "Libre Caslon Text", "Adobe Caslon Pro", "Caslon", Georgia, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-main) !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Rich atmospheric ambient gold lighting across the whole page */
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(231, 199, 126, 0.12) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(231, 199, 126, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(22, 30, 30, 0.9) 0%,
+      var(--bg-primary) 100%
+    ) !important;
+  background-attachment: fixed !important;
+  cursor: none;
+}
+
+/* Dynamic Cursor Spotlight Effect */
+#cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(231, 199, 126, 0.18) 0%,
+    rgba(231, 199, 126, 0.05) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+   2. HEADER / NAVIGATION
+   ============================================================ */
+header {
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 40, 40, 0.7) 0%,
+    rgba(16, 22, 22, 0.8) 100%
+  );
+  border: 1px solid var(--border-gold);
+  border-radius: 50px;
+  padding: 0.8rem 1.8rem;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(231, 199, 126, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent-gold) !important;
+  text-shadow: 0 0 12px rgba(231, 199, 126, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-gold);
+}
+
+/* ============================================================
+   3. HERO SECTION & RICH GOLD BUTTONS
+   ============================================================ */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(231, 199, 126, 0.12);
+  border: 1px solid rgba(231, 199, 126, 0.35);
+  color: var(--accent-gold);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(231, 199, 126, 0.1);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f0d697 0%, #e7c77e 100%) !important;
+  color: #101616 !important;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(231, 199, 126, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(231, 199, 126, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(22, 30, 30, 0.6);
+  border: 1px solid var(--border-gold);
+  color: #ffffff !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+/* ============================================================
+   4. BENTO CARDS WITH GOLD ATMOSPHERIC GRADIENTS
+   ============================================================ */
+.grid,
+.stats-grid,
+.pricing-grid,
+.steps-grid {
+  display: grid !important;
+  gap: 1.8rem !important;
+  margin: 3.5rem 0 !important;
+}
+
+.grid,
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+.stats-grid,
+.steps-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+}
+
+/* Rich Gradient Card Styling matching referral image */
+.card,
+article.card,
+.stat-card,
+.price-card,
+.step-card,
+.faq-item,
+.trusted-section,
+.contact-info-card,
+.contact-form-card {
+  background: linear-gradient(
+    145deg,
+    rgba(32, 42, 42, 0.7) 0%,
+    rgba(16, 22, 22, 0.85) 60%,
+    rgba(35, 30, 20, 0.5) 100%
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 20px !important;
+  padding: 2.2rem 1.8rem !important;
+  backdrop-filter: blur(16px) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(231, 199, 126, 0.25) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover,
+article.card:hover,
+.stat-card:hover,
+.price-card:hover,
+.step-card:hover {
+  border-color: rgba(231, 199, 126, 0.6) !important;
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(231, 199, 126, 0.15),
+    inset 0 1px 2px rgba(231, 199, 126, 0.4) !important;
+}
+
+/* Card Content Typography */
+.card h3,
+.step-card h3 {
+  color: #ffffff !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.card p,
+.step-card p,
+.stat-label {
+  color: var(--text-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+.stat-number,
+.step-number,
+.price {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: var(--accent-gold) !important;
+  text-shadow: 0 0 20px rgba(231, 199, 126, 0.2) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* Highlight Featured / Popular Cards */
+.price-card.popular {
+  border-color: var(--accent-gold) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(45, 55, 50, 0.85) 0%,
+    rgba(20, 26, 26, 0.9) 50%,
+    rgba(50, 42, 25, 0.6) 100%
+  ) !important;
+  box-shadow: 0 0 40px rgba(231, 199, 126, 0.2) !important;
+}
+
+.popular-tag {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: linear-gradient(135deg, #f0d697 0%, #e7c77e 100%);
+  color: #101616;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   5. FAQ ACCORDIONS
+   ============================================================ */
+.faq-item {
+  padding: 0 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+button.faq-question,
+.faq-question {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 1.5rem 2rem !important;
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  outline: none !important;
+}
+
+button.faq-question [data-lucide],
+.faq-question [data-lucide] {
+  color: var(--accent-gold) !important;
+}
+
+.faq-answer {
+  padding: 0 2rem 1.5rem 2rem !important;
+  color: var(--text-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
+footer {
+  margin-top: 5rem !important;
+  padding-top: 3rem !important;
+  border-top: 1px solid rgba(231, 199, 126, 0.2) !important;
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 2rem !important;
+  text-align: left !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.footer-brand .logo {
+  color: var(--accent-gold) !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+}
+
+.footer-brand p,
+.footer-col a {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
+}
+
+.footer-col a:hover {
+  color: var(--accent-gold) !important;
+}
+
+.footer-bottom {
+  padding: 2rem 0 !important;
+  text-align: center !important;
+  border-top: 1px solid rgba(231, 199, 126, 0.1) !important;
+  color: var(--text-muted) !important;
+}
+
+@media (max-width: 768px) {
+  .footer-grid,
+  .mockup-cards-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.digital_heros {
+  color: #e7c77e;
+  font-weight: bold;
+}
+
+/* ============================================================
+   FIX 1: DASHBOARD MOCKUP LAYOUT & COMPONENT STYLING
+   ============================================================ */
+.dashboard-preview {
+  margin: 3.5rem 0;
+  width: 100%;
+}
+
+.dashboard-mockup {
+  background: linear-gradient(
+    145deg,
+    rgba(32, 42, 42, 0.75) 0%,
+    rgba(16, 22, 22, 0.9) 60%,
+    rgba(35, 30, 20, 0.6) 100%
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(231, 199, 126, 0.25) !important;
+}
+
+.mockup-header {
+  background: rgba(12, 16, 16, 0.8) !important;
+  padding: 0.9rem 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(231, 199, 126, 0.18) !important;
+}
+
+.mockup-title {
+  color: var(--accent-gold) !important;
+  font-size: 0.9rem !important;
+  font-family: monospace !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+.mockup-body {
+  display: flex !important;
+  flex-direction: row !important;
+  min-height: 220px !important;
+}
+
+/* Sidebar navigation inside mockup */
+.mockup-sidebar,
+div[class*="sidebar"] {
+  width: 200px !important;
+  min-width: 180px !important;
+  background: rgba(12, 16, 16, 0.5) !important;
+  border-right: 1px solid rgba(231, 199, 126, 0.15) !important;
+  padding: 1.2rem 0.8rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.mockup-sidebar div,
+.mockup-sidebar a,
+.side-item {
+  color: var(--text-muted) !important;
+  font-size: 0.88rem !important;
+  padding: 0.6rem 0.9rem !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.side-item.active,
+.mockup-sidebar div:first-child {
+  background: rgba(231, 199, 126, 0.15) !important;
+  color: var(--accent-gold) !important;
+  font-weight: 600 !important;
+}
+
+/* Mockup inner content grid */
+.mockup-content {
+  flex: 1 !important;
+  padding: 1.8rem !important;
+}
+
+.status-banner {
+  background: rgba(231, 199, 126, 0.08) !important;
+  border: 1px solid rgba(231, 199, 126, 0.25) !important;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 12px !important;
+  font-size: 0.88rem !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.mockup-cards-row {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 1.2rem !important;
+}
+
+.mini-card {
+  background: rgba(12, 16, 16, 0.6) !important;
+  border: 1px solid rgba(231, 199, 126, 0.2) !important;
+  padding: 1.2rem !important;
+  border-radius: 14px !important;
+}
+
+.mini-card span,
+.mini-card p {
+  font-size: 0.8rem !important;
+  color: var(--text-muted) !important;
+  display: block !important;
+}
+
+.mini-card h4,
+.mini-card strong {
+  color: var(--accent-gold) !important;
+  font-size: 1.2rem !important;
+  margin-top: 0.4rem !important;
+  display: block !important;
+}
+
+/* ============================================================
+   FIX 2: CONTACT SECTION & FORM INPUTS STYLING
+   ============================================================ */
+.contact-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2.5rem !important;
+  margin: 4rem 0 !important;
+}
+
+.contact-info-card,
+.contact-form-card {
+  background: linear-gradient(
+    145deg,
+    rgba(32, 42, 42, 0.75) 0%,
+    rgba(16, 22, 22, 0.88) 100%
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 20px !important;
+  padding: 2.5rem !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(231, 199, 126, 0.25) !important;
+}
+
+/* Contact Info Item Layout */
+.contact-detail {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1.2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.contact-detail [data-lucide],
+.contact-detail svg {
+  color: var(--accent-gold) !important;
+  width: 24px !important;
+  height: 24px !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-detail h4 {
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.contact-detail p,
+.contact-detail a {
+  color: var(--text-muted) !important;
+  font-size: 0.92rem !important;
+}
+
+/* Form Controls Fix */
+.contact-form-card form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.2rem !important;
+}
+
+.form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.contact-form-card label {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  display: block !important;
+}
+
+/* Dark Glassmorphic Inputs & Textareas */
+.contact-form-card input,
+.contact-form-card textarea,
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100% !important;
+  background: rgba(12, 16, 16, 0.7) !important;
+  border: 1px solid rgba(231, 199, 126, 0.25) !important;
+  border-radius: 12px !important;
+  padding: 0.9rem 1.2rem !important;
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-family: inherit !important;
+  outline: none !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus,
+input:focus,
+textarea:focus {
+  border-color: var(--accent-gold) !important;
+  box-shadow:
+    0 0 12px rgba(231, 199, 126, 0.25),
+    inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.contact-form-card textarea {
+  min-height: 110px !important;
+  resize: vertical !important;
+}
+
+/* Form Submit Button */
+.contact-form-card button[type="submit"],
+.btn-submit {
+  width: 100% !important;
+  background: linear-gradient(135deg, #f0d697 0%, #e7c77e 100%) !important;
+  color: #101616 !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 0.9rem 1.5rem !important;
+  border-radius: 30px !important;
+  border: none !important;
+  margin-top: 0.5rem !important;
+  box-shadow: 0 4px 20px rgba(231, 199, 126, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-form-card button[type="submit"]:hover,
+.btn-submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 28px rgba(231, 199, 126, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .mockup-body {
+    flex-direction: column !important;
+  }
+  .mockup-sidebar {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(231, 199, 126, 0.15) !important;
+  }
+}
